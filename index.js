@@ -532,4 +532,4 @@ client.onData = async (data, ack) => {
 client.connect(() => {
 	console.log('Worker Node ONLINE');
 	console.log('Streaming from', process.env.CHAIN_NAME);
-});
+}).listen(process.env.PORT || 5000);
