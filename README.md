@@ -43,15 +43,29 @@ Run the docker container by executing the dockerfile:
 
 ## Heroku Setup
 
-Delete package-json.lock as Heroku will install all dependencies.
-Add the default Node.js build-package.
-Add all the Environment Variable.
-Add PORT as an additional Environment Variable.
-Add:
-`app = express();
- app.listen(process.env.PORT);`
+- Delete package-json.lock as Heroku will install all dependencies.
+
+- Add the default Node.js build-package in Heroku.
+
+- Add all the Environment Variables typically added in .env.
+
+- Add PORT as an additional Environment Variable.
+
+- Add:
+
+```
+  app = express();
+  app.listen(process.env.PORT);
+```
+
 to enable dynamic ports, otherwise it will timeout after 60 seconds due to a missing binding.
-Add:
-`"start": "node index.js"`
+
+- Add:
+
+```
+  "start": "node index.js"
+```
+
 to the start-script.
-Add: express to dependencies in package.json
+
+- Add: express to dependencies in package.json
